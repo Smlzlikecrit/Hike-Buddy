@@ -9,9 +9,9 @@ class Trails extends HTMLElement {
         const mapImage = "placeholder for image"
         this.innerHTML = `
         <div class="trail">
-            <h2>${title}</h2>
-            <p>${description}</p>
-            <div class="map-image">${mapImage}</div>
+            <h2>${data-title}</h2>
+            <p>${data-description}</p>
+            <div class="map-image">${data-mapImage}</div>
         </div>
         `
     }
