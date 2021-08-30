@@ -1,17 +1,18 @@
 class Trails extends HTMLElement {
+    // shadow = this.attachShadow({ mode: closed })
     constructor(){
         super()
-        this.attachShadow({ mode: 'open' })
+        
     }
     render(){
-        const title = this.getAttribute("title")
-        const description = this.getAttribute("description")
+        const title = this.getAttribute("data-title")
+        const description = this.getAttribute("data-description")
         const mapImage = "placeholder for image"
         this.innerHTML = `
         <div class="trail">
-            <h2>${data-title}</h2>
-            <p>${data-description}</p>
-            <div class="map-image">${data-mapImage}</div>
+            <h2>${title}</h2>
+            <p>${description}</p>
+            <div class="map-image">${mapImage}</div>
         </div>
         `
     }
@@ -20,7 +21,7 @@ class Trails extends HTMLElement {
     }
 }
 
-window.customElements.define("hiking-trails", Trails)
+window.customElements.define("hiking-trail", Trails)
 
 
 
@@ -36,11 +37,10 @@ window.customElements.define("hiking-trails", Trails)
 
 
 
-class Navbar extends HTMLElement {
-    constructor(){
-        super()
-        this.attachShadow({ mode: 'open' })
-    }
-}
+// class Navbar extends HTMLElement {
+//     constructor(){
+//         super()
+//     }
+// }
 
-window.customElements.define("nav-bar", Navbar)
+// window.customElements.define("nav-bar", Navbar)
