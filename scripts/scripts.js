@@ -8,6 +8,8 @@ class Trails extends HTMLElement {
         const title = this.getAttribute("data-title")
         const description = this.getAttribute("data-description")
         const mapImage = "placeholder for image"
+
+        
         this.innerHTML = `
         <div class="trail">
             <h2>${title}</h2>
@@ -21,26 +23,7 @@ class Trails extends HTMLElement {
     }
 }
 
-window.customElements.define("hiking-trail", Trails)
+customElements.define("hiking-trail", Trails)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// class Navbar extends HTMLElement {
-//     constructor(){
-//         super()
-//     }
-// }
-
-// window.customElements.define("nav-bar", Navbar)
+// import './components/nav-bar.js'
+// import './components/hiking-trails.js'

@@ -14,24 +14,32 @@ body {
 
 
 
+
+/* WEB COMPONENT */
+
 .trails-container {
     margin-top: 0.5rem;
+    padding-left: 0.2rem;
 }
 
+#search-trail {
+    width: 15rem;
+    height: 2rem;
+}
 
+#search-submit{
+    width: 3.5rem;
+    height: 2rem;
+}
 
-p{
-    height: 50px;
+.trail{
+    border: 1px solid green;
+}
+
+.map-image{
     border: 1px solid blue;
+    height: 50px;
 }
-
-
-
-
-
-
-
-
 
 
 
