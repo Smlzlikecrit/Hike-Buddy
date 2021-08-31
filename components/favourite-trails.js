@@ -1,4 +1,4 @@
-class HikingTrails extends HTMLElement {
+class FavouriteTrails extends HTMLElement {
     shadow = this.attachShadow({ mode: 'closed' })
     constructor(){
         super()
@@ -21,5 +21,5 @@ class HikingTrails extends HTMLElement {
     }
 }
 
-customElements.define("hiking-trail", HikingTrails)
+customElements.define("favourite-trail", FavouriteTrails)
 
