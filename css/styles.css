@@ -1,25 +1,12 @@
 body {
     background-color: #e6e6e6;
     margin: 0;
+    overflow-y: scroll;
+    font-family: 'Times New Roman', Times, serif;
 }
 * {
     box-sizing: border-box;
 }
-/* HEADER */
-
-/* #header {
-    background-color: red;
-    text-align: center;
-}
-
-a{
-    text-decoration: none;
-    border: 1px solid grey;
-    display: block;
-    padding: 1rem 2rem;
-    color: black;
-} */
-
 
 .active {
     color: #F00;
@@ -29,13 +16,14 @@ a{
 
 .trails-container {
     margin-top: 0.5rem;
+    margin-left: 0.2rem;
 }
 
 .user-interaction {
     padding-bottom: 0.5rem;
 }
 #search-trail {
-    width: 15rem;
+    width: 19.5rem;
     height: 2rem;
 }
 
@@ -52,28 +40,3 @@ a{
     margin-bottom: 3.3rem;
 }
 
-
-/* FOOTER */
-/* aside {
-    background: red;
-    box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1x 10px 0px rgb(0 0 0 / 12%);
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    position: fixed;
-}
-ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: space-around;
-}
-
-a{
-    text-decoration: none;
-    border: 1px solid grey;
-    display: block;
-    padding: 1rem 2rem;
-    color: black;
-} */
