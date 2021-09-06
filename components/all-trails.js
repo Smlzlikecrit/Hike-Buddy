@@ -1,4 +1,4 @@
-import '../components/hiking-trails.js'
+
 
 class AllTrails extends HTMLElement {
     shadow = this.attachShadow({ mode: 'closed' })

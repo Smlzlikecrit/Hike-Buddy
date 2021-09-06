@@ -11,8 +11,8 @@ class FavouriteTrails extends HTMLElement {
 
         this.shadow.innerHTML = `  
             <div class="trail">
-                <h2>${title}</h2>
-                <p>${description}</p>
+                <h2>fav1</h2>
+                <p>fav1-description</p>
                 <div class="map-image">${mapImage}</div>
             </div>`
     }
@@ -21,5 +21,5 @@ class FavouriteTrails extends HTMLElement {
     }
 }
 
-customElements.define("favourite-trail", FavouriteTrails)
+customElements.define("favourite-trails", FavouriteTrails)
 
