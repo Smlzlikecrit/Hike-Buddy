@@ -1,5 +1,5 @@
 import '../components/nav-bar.js'
-import '../components/hiking-trails.js'
+import '../components/hiking-trail.js'
 import '../components/custom-header.js'
 import '../components/favourite-trails.js'
 import '../components/chosen-trail.js'

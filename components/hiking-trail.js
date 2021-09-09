@@ -41,6 +41,7 @@ class HikingTrails extends HTMLElement {
            3. load trail.html with relating values*/
         this.elements.button.addEventListener('click',  () => {
             window.open("trail.html","_self")
+            // history.pushState(null, null, "trail")
         })
     }
     disconnectedCallback(){
@@ -53,13 +54,21 @@ class HikingTrails extends HTMLElement {
         this.shadow.innerHTML = `
         <style>
             .trail{ 
-                border: 1px solid black
+                border: 2px solid darkgrey;
+                margin-top: 0.5rem;
+                margin-right: 0.2rem
+            }
+            button{
+                width: 4rem;
+            }
+            #button-div{
+                text-align: center;
             }
         </style>
         <div class="trail">
             <h2>${this.data.title}</h2>
             <p>${this.data.description}</p>
-            <button class="view-button">View</button>
+            <div id="button-div"><button class="view-button">View</button></div>
             <div class="map-image">${this.data.mapImage}</div>
         </div>
         

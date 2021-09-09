@@ -1,5 +1,3 @@
-
-
 class AllTrails extends HTMLElement {
     shadow = this.attachShadow({ mode: 'closed' })
     constructor(){
@@ -7,6 +5,12 @@ class AllTrails extends HTMLElement {
     }
     render(){
         this.shadow.innerHTML = `
+        <style>
+            .trail-cards{
+                // padding-top: 1rem;
+                padding-bottom: 6rem;
+            }
+        </style>
         <div class="trail-cards">
             <hiking-trail data-title="Lion's Head" data-description="long hike"></hiking-trail>
             <hiking-trail data-title="Peer's Cave" data-description="Easy hike"></hiking-trail>

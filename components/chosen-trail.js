@@ -16,9 +16,9 @@ class ChosenTrail extends HTMLElement {
     render(){
         this.shadow.innerHTML = `
             <div class="trail">
-                <h2>${this.data.title}</h2>
-                <p>${this.data.description}</p>
-                <div class="map-image">${this.data.mapImage}</div>
+                <h2>123</h2>
+                <p></p>
+                <div class="map-image"></div>
             </div>
         `
     }
@@ -26,4 +26,4 @@ class ChosenTrail extends HTMLElement {
 
 
 
-window.customElements.define("chosen-trail", ChosenTrail)
+customElements.define("chosen-trail", ChosenTrail)

@@ -6,6 +6,9 @@ class AccountSettings extends HTMLElement {
     render(){
         this.shadow.innerHTML = `
             <style>
+                h3, input {
+                margin-left: 1rem;
+            }
                 .button-container {
                     bottom: 4rem;
                     left: 0;
@@ -31,7 +34,6 @@ class AccountSettings extends HTMLElement {
                 }
             </style>
             <div class="settings-container">
-                <p></p>
                 <h3>Colour Scheme</h3>
                 <input type="radio" id="default-colour" name="colour-scheme">
                 <label for="colour-scheme-1">Default</label><br>
