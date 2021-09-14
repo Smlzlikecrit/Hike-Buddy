@@ -1,8 +1,8 @@
 body {
-    background-color: #e6e6e6;
+    background-color: #e1e6ec;
     margin: 0;
     overflow-y: scroll;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: Inter, Arial, Helvetica, sans-serif
 }
 * {
     box-sizing: border-box;
@@ -23,13 +23,22 @@ body {
     padding-bottom: 0.5rem;
 }
 #search-trail {
-    width: 80%;
+    margin-left: 0.2rem;
+    width: 15rem;
     height: 2rem;
+    border-top: 0;
+    border-right: 0;
+    border-left: 0;
+    border-bottom: 1px solid #8CDFB3;
+    border-radius: 3px;
 }
 
 #filter-button{
     width: 3.5rem;
     height: 2rem;
+    background: #8CDFB3;
+    border: 1px solid #4AAE8C;
+    border-radius: 5px;
 }
 
 .trail{

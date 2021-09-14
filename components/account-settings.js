@@ -8,7 +8,7 @@ class AccountSettings extends HTMLElement {
             <style>
                 h3, input {
                 margin-left: 1rem;
-            }
+                }
                 .button-container {
                     bottom: 4rem;
                     left: 0;
@@ -20,7 +20,10 @@ class AccountSettings extends HTMLElement {
                 #cancel-button, #save-button {
                     width: 48%;
                     height: 2rem;
-                    background: #cccc
+                    background: #8CDFB3;
+                    margin-bottom: 1.5rem;
+                    border-radius: 10px;
+
                 }
                 #premium-upgrade-button {
                     display: fixed;
@@ -30,8 +33,10 @@ class AccountSettings extends HTMLElement {
                     position: absolute;
                     top: 60%;
                     background: gold;
-                    box-shadow: 0 8px 8px -5px 
+                    box-shadow: 0px 8px 8px -5px;
+                    border-radius: 10px;
                 }
+
             </style>
             <div class="settings-container">
                 <h3>Colour Scheme</h3>

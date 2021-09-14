@@ -7,12 +7,13 @@ class NavBar extends HTMLElement {
         this.shadow.innerHTML = `
         <style>
             aside {
-                background: red;
+                background: #8CDFB3;
                 box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1x 10px 0px rgb(0 0 0 / 12%);
                 bottom: 0;
                 left: 0;
                 width: 100%;
                 position: fixed;
+                border-top: 0.1px solid #F3F3F3;
             }
             ul {
                 list-style: none;
@@ -24,11 +25,17 @@ class NavBar extends HTMLElement {
             
             a{
                 text-decoration: none;
-                border: 1px solid grey;
                 display: block;
                 padding: 1rem 2rem;
                 color: black;
             }
+            .separator {
+                border-left: 0.5px solid #4AAE8C; 
+                border-right:0.5px solid #4AAE8C; 
+                top:10px; 
+                margin-top: 0.5rem;
+                margin-bottom: 0.5rem;
+              }
         </style>
         
         <div>
@@ -36,7 +43,9 @@ class NavBar extends HTMLElement {
             <nav>
                 <ul>
                     <li><a href="/favourite-trails.html">Trails</a></li>
+                    <span class="separator"></span>
                     <li><a href="/map.html">Map</a></li>
+                    <span class="separator"></span>
                     <li><a href="/account.html">Account</a></li>
                 </ul>
                 </nav>
