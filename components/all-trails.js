@@ -12,10 +12,10 @@ class AllTrails extends HTMLElement {
             }
         </style>
         <div class="trail-cards">
-            <hiking-trail data-title="Lion's Head" data-description="long hike"></hiking-trail>
-            <hiking-trail data-title="Peer's Cave" data-description="Easy hike"></hiking-trail>
-            <hiking-trail data-title="Simon's Town Waterfall" data-description="beautiful views, easy hike"></hiking-trail>
-            <hiking-trail data-title="Chapman's Peak" data-description="long hike, brilliant sea views"></hiking-trail>
+            <hiking-trail></hiking-trail>
+            <hiking-trail></hiking-trail>
+            <hiking-trail></hiking-trail>
+            <hiking-trail></hiking-trail>
         </div>`
     }
     connectedCallback(){

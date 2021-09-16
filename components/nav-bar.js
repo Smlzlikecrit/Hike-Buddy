@@ -13,20 +13,21 @@ class NavBar extends HTMLElement {
                 left: 0;
                 width: 100%;
                 position: fixed;
-                border-top: 0.1px solid #F3F3F3;
+                box-shadow: 0px -5px 6px -3px #888888;
             }
             ul {
                 list-style: none;
                 margin: 0;
                 padding: 0;
                 display: flex;
-                justify-content: space-around;
+                justify-content: space-evenly;
+                width: 95%;
             }
-            
             a{
                 text-decoration: none;
                 display: block;
-                padding: 1rem 2rem;
+                padding-top: 1rem;
+                padding-bottom: 1rem;
                 color: black;
             }
             .separator {
@@ -42,7 +43,7 @@ class NavBar extends HTMLElement {
             <aside aria-label="navigation">
             <nav>
                 <ul>
-                    <li><a href="/favourite-trails.html">Trails</a></li>
+                    <li><a href="/favourite-trails.html">Favourites</a></li>
                     <span class="separator"></span>
                     <li><a href="/map.html">Map</a></li>
                     <span class="separator"></span>

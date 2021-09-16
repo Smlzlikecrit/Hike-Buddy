@@ -3,6 +3,7 @@ class FavouriteTrails extends HTMLElement {
         {
         title: "Lion's Head",
         description : "Very long hike, worth it for the view!",
+        difficulty: "",
         mapImage : "placeholder for image",
         stockImageURL : "https://lh5.googleusercontent.com/CtcVF_MpkTaGgN9FvwCv4Vfduc2jmnE320Sbthr9-TMdkaXLgdjb8x3nnJWE-SUkDzyMB8VilllTs21hot1YzdFwUE10-aA1qGxOxcxP7TSe04YJBxYjAEC-eE-mdVZ1wuRmvjSt"
         }
@@ -11,23 +12,28 @@ class FavouriteTrails extends HTMLElement {
     selectedTrails = [
         {title: "Lion's Head",
         description: "Long hike",
-        location: "",
-        imgURL: ""},
+        coordinates: "33.9350° S, 18.3890° E",
+        difficulty: "",
+        imgURL: "https://lh5.googleusercontent.com/CtcVF_MpkTaGgN9FvwCv4Vfduc2jmnE320Sbthr9-TMdkaXLgdjb8x3nnJWE-SUkDzyMB8VilllTs21hot1YzdFwUE10-aA1qGxOxcxP7TSe04YJBxYjAEC-eE-mdVZ1wuRmvjSt"},
         {title: "Chapman's Peak",
         description: "",
-        location: "",
+        coordinates: "34.0883° S, 18.3594° E",
+        difficulty: "",
         imgURL: ""},
-        {title: "Piers Cave",
+        {title: "Peers Cave",
         description: "",
-        location: "",
+        coordinates: "34.1191° S, 18.4074° E",
+        difficulty: "",
         imgURL: ""},
-        {title: "Table Mountain",
+        {title: "Elsie's Peak",
         description: "",
-        location: "",
+        coordinates: "34.1501° S, 18.4355° E",
+        difficulty: "",
         imgURL: ""},
         {title: "Devil's Peak",
         description: "",
-        location: "",
+        coordinates: "33.9549° S, 18.4395° E",
+        difficulty: "",
         imgURL: ""}
     ]
 
@@ -36,12 +42,20 @@ class FavouriteTrails extends HTMLElement {
         super()
         
     }
+
+    connectedCallback() {
+        this.render()
+        
+    }
+
+    disconnectedCallback(){
+
+    }
+
+
+    /* Custom Methods */
     render(){
-        const title = this.getAttribute("data-title")
-        const description = this.getAttribute("data-description")
-        const mapImage = "placeholder for image"
-
-
+        
         this.shadow.innerHTML = `
         <style>
             h2{
@@ -52,15 +66,6 @@ class FavouriteTrails extends HTMLElement {
             }
             p{
                 margin-left: 0.2rem;
-            }
-            .map-image {
-                width: 100%;
-                margin-bottom: 0;
-                border-top-right-radius: 5px;                
-                border-top-left-radius: 5px;
-                border-bottom-right-radius: 5px;                
-                border-bottom-left-radius: 5px;
-                margin-bottom: 6rem;
             }
             .trail-image{
                 border-top-right-radius: 5px;                
@@ -80,6 +85,18 @@ class FavouriteTrails extends HTMLElement {
                 width: 97%;
                 margin-right: 0.2rem;
                 margin-bottom: 1rem;
+                overflow: hidden;
+                height: 350px;
+            }
+            .view-favourite-trail-button{
+                height: 2rem;
+                width: 15rem;
+                background: #8CDFB3;
+                margin-left: 2rem;
+                margin-right: 2rem;
+                border-width: 0.5px;
+                border-radius: 7px;
+                border-color: #0C1A4B3D;
             }
 
         </style>
@@ -87,13 +104,18 @@ class FavouriteTrails extends HTMLElement {
         <h2>Favourite Trails</h2>
         <div class="trail">
             <img class="trail-image" src="https://lh5.googleusercontent.com/CtcVF_MpkTaGgN9FvwCv4Vfduc2jmnE320Sbthr9-TMdkaXLgdjb8x3nnJWE-SUkDzyMB8VilllTs21hot1YzdFwUE10-aA1qGxOxcxP7TSe04YJBxYjAEC-eE-mdVZ1wuRmvjSt">
-            <h3>${this.savedTrails.title}</h3>
-            <p>${this.savedTrails.description}</p>
-            <img class="map-image" src="https://hikelionshead.co.za/wp-content/uploads/2018/04/Advanced-Lions-Head-hike-map.png" alt="Trail location on map">
+            <h3 class="title">${this.savedTrails.title}</h3>
+            <p class="description">${this.savedTrails.description}</p>
+            <button class="view-favourite-trail-button">View on Map</button>
         </div>`
     }
-    connectedCallback() {
-        this.render()
+
+    mapView(){
+        this.shadow.innerHTML = `
+        <h2>Hello</h2>
+        
+        
+        `
     }
 }
 

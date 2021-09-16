@@ -15,7 +15,7 @@ class CustomHeader extends HTMLElement {
                 #header {
                     background: #8CDFB3;
                     text-align: center;
-                    border-bottom: 0.1px solid #F3F3F3;
+                    box-shadow: 0px 5px 6px -3px #888888;
                 }
                 
                 a{
