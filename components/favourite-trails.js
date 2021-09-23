@@ -1,61 +1,97 @@
 class FavouriteTrails extends HTMLElement {
-    savedTrails = 
+    /* Variables */
+    savedTrails =
         {
-        title: "Lion's Head",
-        description : "Very long hike, worth it for the view!",
-        difficulty: "",
-        mapImage : "placeholder for image",
-        stockImageURL : "https://lh5.googleusercontent.com/CtcVF_MpkTaGgN9FvwCv4Vfduc2jmnE320Sbthr9-TMdkaXLgdjb8x3nnJWE-SUkDzyMB8VilllTs21hot1YzdFwUE10-aA1qGxOxcxP7TSe04YJBxYjAEC-eE-mdVZ1wuRmvjSt"
+            title: "Lion's Head",
+            description: "Very long hike, worth it for the view!",
+            difficulty: "",
+            mapImage: "placeholder for image",
+            stockImageURL: "https://lh5.googleusercontent.com/CtcVF_MpkTaGgN9FvwCv4Vfduc2jmnE320Sbthr9-TMdkaXLgdjb8x3nnJWE-SUkDzyMB8VilllTs21hot1YzdFwUE10-aA1qGxOxcxP7TSe04YJBxYjAEC-eE-mdVZ1wuRmvjSt"
         }
 
-        
+
     selectedTrails = [
-        {title: "Lion's Head",
-        description: "Long hike",
-        coordinates: "33.9350° S, 18.3890° E",
-        difficulty: "",
-        imgURL: "https://lh5.googleusercontent.com/CtcVF_MpkTaGgN9FvwCv4Vfduc2jmnE320Sbthr9-TMdkaXLgdjb8x3nnJWE-SUkDzyMB8VilllTs21hot1YzdFwUE10-aA1qGxOxcxP7TSe04YJBxYjAEC-eE-mdVZ1wuRmvjSt"},
-        {title: "Chapman's Peak",
-        description: "",
-        coordinates: "34.0883° S, 18.3594° E",
-        difficulty: "",
-        imgURL: ""},
-        {title: "Peers Cave",
-        description: "",
-        coordinates: "34.1191° S, 18.4074° E",
-        difficulty: "",
-        imgURL: ""},
-        {title: "Elsie's Peak",
-        description: "",
-        coordinates: "34.1501° S, 18.4355° E",
-        difficulty: "",
-        imgURL: ""},
-        {title: "Devil's Peak",
-        description: "",
-        coordinates: "33.9549° S, 18.4395° E",
-        difficulty: "",
-        imgURL: ""}
+        {
+            title: "Lion's Head",
+            description: "Long hike",
+            coordinates: "33.9350° S, 18.3890° E",
+            difficulty: "",
+            imgURL: "https://lh5.googleusercontent.com/CtcVF_MpkTaGgN9FvwCv4Vfduc2jmnE320Sbthr9-TMdkaXLgdjb8x3nnJWE-SUkDzyMB8VilllTs21hot1YzdFwUE10-aA1qGxOxcxP7TSe04YJBxYjAEC-eE-mdVZ1wuRmvjSt"
+        },
+        {
+            title: "Chapman's Peak",
+            description: "",
+            coordinates: "34.0883° S, 18.3594° E",
+            difficulty: "",
+            imgURL: ""
+        },
+        {
+            title: "Peers Cave",
+            description: "",
+            coordinates: "34.1191° S, 18.4074° E",
+            difficulty: "",
+            imgURL: ""
+        },
+        {
+            title: "Elsie's Peak",
+            description: "",
+            coordinates: "34.1501° S, 18.4355° E",
+            difficulty: "",
+            imgURL: ""
+        },
+        {
+            title: "Devil's Peak",
+            description: "",
+            coordinates: "33.9549° S, 18.4395° E",
+            difficulty: "",
+            imgURL: ""
+        }
     ]
 
     shadow = this.attachShadow({ mode: 'closed' })
-    constructor(){
+
+    /* Internal Methods */
+
+    constructor() {
         super()
-        
+
     }
 
     connectedCallback() {
         this.render()
-        
+
     }
 
-    disconnectedCallback(){
+    disconnectedCallback() {
 
     }
 
 
     /* Custom Methods */
-    render(){
-        
+    
+    // result = selectedTrails
+    // .filter(trail => !(trail.title.toLocaleLowerCase().includes('peak')))
+    // .map((trail) => (
+    //     `
+    //         <div>
+    //             <h2>${trail.title}</h2>
+    //             <p>${trail.coordinates}</p>
+    //         </div>
+    //     `
+    // ))
+    // .join('')
+    // ----------
+    // displayFavourites(){
+    
+    // result = selectedTrails.map((trail => (
+    //     `<div>
+    //         <h2>${trail.title}</h2>
+    //         <p>${trail.coordinates}</p>
+    //     </div>`
+    // ))).join('')
+    // }
+
+    render() {
         this.shadow.innerHTML = `
         <style>
             h2{
@@ -91,12 +127,13 @@ class FavouriteTrails extends HTMLElement {
             .view-favourite-trail-button{
                 height: 2rem;
                 width: 15rem;
-                background: #8CDFB3;
+                background: #4C6FFF;
                 margin-left: 2rem;
                 margin-right: 2rem;
                 border-width: 0.5px;
                 border-radius: 7px;
-                border-color: #0C1A4B3D;
+                border-color: #4C6FFF;
+                color: #FFFFFF;
             }
 
         </style>
@@ -110,13 +147,7 @@ class FavouriteTrails extends HTMLElement {
         </div>`
     }
 
-    mapView(){
-        this.shadow.innerHTML = `
-        <h2>Hello</h2>
-        
-        
-        `
-    }
+
 }
 
 customElements.define("favourite-trails", FavouriteTrails)

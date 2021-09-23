@@ -1,5 +1,12 @@
 class MapSearch extends HTMLElement {
+    /* Variables */
+
     shadow = this.attachShadow({ mode: 'closed' })
+
+
+
+    /* Internal Methods */
+
     constructor(){
         super()
     }
@@ -19,8 +26,14 @@ class MapSearch extends HTMLElement {
               zoom: 4
             })
           });
-          console.log(map)
     }
+
+    disconnectedCallback(){
+
+    }
+
+    
+    /* Custom Methods */
 
     render(){
         this.shadow.innerHTML = `
@@ -42,15 +55,16 @@ class MapSearch extends HTMLElement {
                 border-top: 0;
                 border-right: 0;
                 border-left: 0;
-                border-bottom: 1px solid #8CDFB3;
+                border-bottom: 1px solid #4C6FFF;
                 border-radius: 3px;
             }
             #map-search-btn {
                 height: 2.3rem;
                 width: 4rem;
-                background: #8CDFB3;
-                border: 1px solid #4AAE8C;
+                background: #4C6FFF;
+                border: 1px solid #4C6FFF;
                 border-radius: 5px;
+                color: #FFFFFF;
             }
             #map-container {
                 margin-top: 1rem;

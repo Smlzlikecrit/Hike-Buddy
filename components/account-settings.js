@@ -1,30 +1,32 @@
 class AccountSettings extends HTMLElement {
+    /* Variables */
+
+
     shadow = this.attachShadow({ mode: 'closed' })
+
+    /* Internal Methods */
+
     constructor(){
         super()
     }
+    
+
+    connectedCallback() {
+        this.render()
+    }
+    disconnectedCallback(){
+
+    }
+
+    /*Custom Methods */
+    
     render(){
         this.shadow.innerHTML = `
             <style>
                 h3, input {
                 margin-left: 1rem;
                 }
-                .button-container {
-                    bottom: 4rem;
-                    left: 0;
-                    width: 100%;
-                    position: fixed;
-                    display: flex;
-                    justify-content: space-around;
-                }
-                #cancel-button, #save-button {
-                    width: 48%;
-                    height: 2rem;
-                    background: #8CDFB3;
-                    margin-bottom: 1.5rem;
-                    border-radius: 10px;
 
-                }
                 #premium-upgrade-button {
                     display: fixed;
                     width: 15rem;
@@ -32,33 +34,24 @@ class AccountSettings extends HTMLElement {
                     margin-left: 2.5rem;
                     position: absolute;
                     top: 60%;
-                    background: gold;
-                    box-shadow: 0px 8px 8px -5px;
+                    background: #4C6FFF;
+                    border: 1px solid #4C6FFF;
                     border-radius: 10px;
+                    color: #FFFFFF;
                 }
 
             </style>
             <div class="settings-container">
                 <h3>Colour Scheme</h3>
-                <input type="radio" id="default-colour" name="colour-scheme">
-                <label for="colour-scheme-1">Default</label><br>
+                <input type="radio" id="default-colour" name="colour-scheme" checked>
+                <label for="colour-scheme-1">Standard</label><br>
                 <input type="radio" id="dark-mode" name="colour-scheme">
                 <label for="colour-scheme-2">Dark Mode</label><br>  
 
                 <button id="premium-upgrade-button">Upgrade to Premium</button>
-                <br>
-
-                <div class="button-container">
-                    <button id="cancel-button">Cancel</button>
-                    <button id="save-button">Save Changes</button>
-                </div>
                 
             </div>
             `
-    }
-
-    connectedCallback() {
-        this.render()
     }
 }
 

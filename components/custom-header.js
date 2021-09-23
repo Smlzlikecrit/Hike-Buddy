@@ -1,9 +1,23 @@
 class CustomHeader extends HTMLElement {
+    /* Variables */
+
     shadow = this.attachShadow({ mode: 'closed' })
     constructor(){
         super()
     }
 
+    /* Internal Methods */
+
+    connectedCallback() {
+        this.render()
+    }
+
+    disconnectedCallback(){
+
+    }
+
+    /* Custom Methods */
+    
     render(){
         this.shadow.innerHTML = `
             <style>
@@ -13,7 +27,7 @@ class CustomHeader extends HTMLElement {
                 position: sticky;
             }
                 #header {
-                    background: #8CDFB3;
+                    background: #4C6FFF;
                     text-align: center;
                     box-shadow: 0px 5px 6px -3px #888888;
                 }
@@ -22,7 +36,7 @@ class CustomHeader extends HTMLElement {
                     text-decoration: none;
                     display: block;
                     padding: 1rem 2rem;
-                    color: black;
+                    color: #FFFFFF;
                 }
             </style>
             <div class="header-container">
@@ -30,10 +44,6 @@ class CustomHeader extends HTMLElement {
             </div>
 
         `
-    }
-
-    connectedCallback() {
-        this.render()
     }
 }
 
