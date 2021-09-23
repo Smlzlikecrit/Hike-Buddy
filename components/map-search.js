@@ -1,9 +1,11 @@
 class MapSearch extends HTMLElement {
     /* Variables */
 
+    elements = {
+        searchButton: null,  
+    }
+
     shadow = this.attachShadow({ mode: 'closed' })
-
-
 
     /* Internal Methods */
 
@@ -13,6 +15,7 @@ class MapSearch extends HTMLElement {
 
     connectedCallback() {
         this.render()
+        
         const map = this.shadow.querySelector("#map")
         new ol.Map({
             target: map,
@@ -22,7 +25,7 @@ class MapSearch extends HTMLElement {
               })
             ],
             view: new ol.View({
-              center: ol.proj.fromLonLat([37.41, 8.82]),
+              center: ol.proj.fromLonLat([18.41, -30.82]),
               zoom: 4
             })
           });
@@ -32,7 +35,7 @@ class MapSearch extends HTMLElement {
 
     }
 
-    
+
     /* Custom Methods */
 
     render(){

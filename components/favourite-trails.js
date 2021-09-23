@@ -3,8 +3,9 @@ class FavouriteTrails extends HTMLElement {
     savedTrails =
         {
             title: "Lion's Head",
-            description: "Very long hike, worth it for the view!",
-            difficulty: "",
+            id: "1",
+            description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's stand",
+            difficulty: "4",
             mapImage: "placeholder for image",
             stockImageURL: "https://lh5.googleusercontent.com/CtcVF_MpkTaGgN9FvwCv4Vfduc2jmnE320Sbthr9-TMdkaXLgdjb8x3nnJWE-SUkDzyMB8VilllTs21hot1YzdFwUE10-aA1qGxOxcxP7TSe04YJBxYjAEC-eE-mdVZ1wuRmvjSt"
         }
@@ -13,41 +14,53 @@ class FavouriteTrails extends HTMLElement {
     selectedTrails = [
         {
             title: "Lion's Head",
+            id: "1",
             description: "Long hike",
             coordinates: "33.9350° S, 18.3890° E",
-            difficulty: "",
+            difficulty: "4",
             imgURL: "https://lh5.googleusercontent.com/CtcVF_MpkTaGgN9FvwCv4Vfduc2jmnE320Sbthr9-TMdkaXLgdjb8x3nnJWE-SUkDzyMB8VilllTs21hot1YzdFwUE10-aA1qGxOxcxP7TSe04YJBxYjAEC-eE-mdVZ1wuRmvjSt"
         },
         {
             title: "Chapman's Peak",
+            id: "2",
             description: "",
             coordinates: "34.0883° S, 18.3594° E",
-            difficulty: "",
-            imgURL: ""
+            difficulty: "3",
+            imgURL: "https://lh5.googleusercontent.com/CtcVF_MpkTaGgN9FvwCv4Vfduc2jmnE320Sbthr9-TMdkaXLgdjb8x3nnJWE-SUkDzyMB8VilllTs21hot1YzdFwUE10-aA1qGxOxcxP7TSe04YJBxYjAEC-eE-mdVZ1wuRmvjSt"
         },
         {
             title: "Peers Cave",
+            id: "3",
             description: "",
             coordinates: "34.1191° S, 18.4074° E",
-            difficulty: "",
-            imgURL: ""
+            difficulty: "3",
+            imgURL: "https://lh5.googleusercontent.com/CtcVF_MpkTaGgN9FvwCv4Vfduc2jmnE320Sbthr9-TMdkaXLgdjb8x3nnJWE-SUkDzyMB8VilllTs21hot1YzdFwUE10-aA1qGxOxcxP7TSe04YJBxYjAEC-eE-mdVZ1wuRmvjSt"
         },
         {
             title: "Elsie's Peak",
+            id: "4",
             description: "",
             coordinates: "34.1501° S, 18.4355° E",
-            difficulty: "",
-            imgURL: ""
+            difficulty: "5",
+            imgURL: "https://lh5.googleusercontent.com/CtcVF_MpkTaGgN9FvwCv4Vfduc2jmnE320Sbthr9-TMdkaXLgdjb8x3nnJWE-SUkDzyMB8VilllTs21hot1YzdFwUE10-aA1qGxOxcxP7TSe04YJBxYjAEC-eE-mdVZ1wuRmvjSt"
         },
         {
             title: "Devil's Peak",
+            id: "5",
             description: "",
             coordinates: "33.9549° S, 18.4395° E",
-            difficulty: "",
-            imgURL: ""
+            difficulty: "5",
+            imgURL: "https://lh5.googleusercontent.com/CtcVF_MpkTaGgN9FvwCv4Vfduc2jmnE320Sbthr9-TMdkaXLgdjb8x3nnJWE-SUkDzyMB8VilllTs21hot1YzdFwUE10-aA1qGxOxcxP7TSe04YJBxYjAEC-eE-mdVZ1wuRmvjSt"
         }
     ]
 
+    elements = {
+        h2: null,
+        h3: null,
+        p: null,
+        button: null,
+    }
+    
     shadow = this.attachShadow({ mode: 'closed' })
 
     /* Internal Methods */
@@ -60,6 +73,12 @@ class FavouriteTrails extends HTMLElement {
     connectedCallback() {
         this.render()
 
+        this.elements = {
+            h2: this.querySelector(".main-heading"),
+            h3: this.querySelector(".title"),
+            p: this.querySelector(".description"),
+            button: this.querySelector(".view-trail-map-button"),
+        }
     }
 
     disconnectedCallback() {
@@ -68,7 +87,7 @@ class FavouriteTrails extends HTMLElement {
 
 
     /* Custom Methods */
-    
+
     // result = selectedTrails
     // .filter(trail => !(trail.title.toLocaleLowerCase().includes('peak')))
     // .map((trail) => (
@@ -89,6 +108,7 @@ class FavouriteTrails extends HTMLElement {
     //         <p>${trail.coordinates}</p>
     //     </div>`
     // ))).join('')
+    //
     // }
 
     render() {
@@ -96,9 +116,12 @@ class FavouriteTrails extends HTMLElement {
         <style>
             h2{
                 margin-left: 0.5rem;
+                margin-top: 0.5rem;
+                margin-bottom: 0rem;
             }
             h3{
                 margin-left: 0.2rem;
+                margin-bottom: -0.5rem;
             }
             p{
                 margin-left: 0.2rem;
@@ -124,26 +147,33 @@ class FavouriteTrails extends HTMLElement {
                 overflow: hidden;
                 height: 350px;
             }
-            .view-favourite-trail-button{
+            .view-trail-map-button{
                 height: 2rem;
-                width: 15rem;
+                width: 10rem;
+                display: block;
                 background: #4C6FFF;
-                margin-left: 2rem;
-                margin-right: 2rem;
+                margin-left: auto;
+                margin-right: auto;
                 border-width: 0.5px;
                 border-radius: 7px;
                 border-color: #4C6FFF;
                 color: #FFFFFF;
             }
 
+            .description{
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
         </style>
         
-        <h2>Favourite Trails</h2>
+        <h2 class="main-heading">Favourite Trails</h2>
         <div class="trail">
             <img class="trail-image" src="https://lh5.googleusercontent.com/CtcVF_MpkTaGgN9FvwCv4Vfduc2jmnE320Sbthr9-TMdkaXLgdjb8x3nnJWE-SUkDzyMB8VilllTs21hot1YzdFwUE10-aA1qGxOxcxP7TSe04YJBxYjAEC-eE-mdVZ1wuRmvjSt">
             <h3 class="title">${this.savedTrails.title}</h3>
             <p class="description">${this.savedTrails.description}</p>
-            <button class="view-favourite-trail-button">View on Map</button>
+            <button class="view-trail-map-button">View</button>
         </div>`
     }
 

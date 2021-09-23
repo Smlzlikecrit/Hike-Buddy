@@ -30,7 +30,8 @@ class HikingTrails extends HTMLElement {
             title: this.shadow.querySelector("h2"),
             description: this.shadow.querySelector("p"),
             button: this.shadow.querySelector(".view-button"),
-            mapImage: this.shadow.querySelector(".map-image")
+            mapImage: this.shadow.querySelector(".map-image"),
+
         }
 
 
@@ -39,6 +40,7 @@ class HikingTrails extends HTMLElement {
             // history.pushState(null, null, "trail")
         })
     }
+    
     disconnectedCallback(){
         // this.removeEventListener('click',)
     }
@@ -86,10 +88,10 @@ class HikingTrails extends HTMLElement {
             }
 
             .add-to-fav-image{
-                width: 25px;
+                width: 30px;
                 display: inline;
                 float: right;
-                margin-top: -1.4rem;
+                margin-top: -1.6rem;
                 margin-right: 1.5rem;
             }
 
@@ -112,8 +114,9 @@ class HikingTrails extends HTMLElement {
                 padding-top: 0.8rem;
                 width: 120px;
             }
-            
+
         </style>
+
         <div class="trail">
             <img class="hike-image" src="https://images.unsplash.com/uploads/1412533519888a485b488/bb9f9777?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"/>
             <h2>${this.data.title}</h2>

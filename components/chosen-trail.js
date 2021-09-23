@@ -4,11 +4,20 @@ class ChosenTrail extends HTMLElement {
     data = {
         title : "Lion's Head",
         description : "lorTempor anim amet anim magna ea esse qui occaecat labore sint tempor tempor. Occaecat duis veniam fugiat non ex consequat adipisicing cupidatat nisi et ipsum labore commodo eu. Laborum nulla excepteur nisi exercitation commodo. Velit aute nisi irure magna esse amet nisi labore tempor in aute enim. In officia id cupidatat mollit id nisi elit. Ipsum ad veniam ad adipisicing in quis ea aute sit et. Lorem et ad dolore anim nulla reprehenderit Lorem labore non reprehenderit anim adipisicing.em",
-        hikeImageURL : "https://images.unsplash.com/uploads/1412533519888a485b488/bb9f9777?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
+        trailImageURL : "https://images.unsplash.com/uploads/1412533519888a485b488/bb9f9777?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
         difficulty: "4",
         coordinatesLon: 33.9350,
         coordinatesLat: 18.3890
     }
+
+    elements = {
+        h2: null,
+        addFavourite: null,
+        difficulty: null,
+        description: null,
+        directions: null,
+    }
+
     shadow = this.attachShadow({ mode: 'closed' })
 
 
@@ -21,6 +30,14 @@ class ChosenTrail extends HTMLElement {
     connectedCallback(){
         this.render()
 
+        this.elements = {
+            h2: this.querySelector("h2"),
+            addFavourite: this.querySelector(".add-to-fav-icon"),
+            difficulty: this.querySelector("difficulty-level"),
+            description: this.querySelector(".description"),
+            directions: this.querySelector(".map-directions"),
+        }
+        
         const map = this.shadow.querySelector("#map")
         new ol.Map({
             target: map,
@@ -85,24 +102,23 @@ class ChosenTrail extends HTMLElement {
                 padding: 6px 7px 10px 10px;
                 background-color: #4C6FFF;
                 color: #FFFFFF;
-                margin-left: 6.5rem;
+                margin: auto;
                 padding-left: 1.1rem;
                 margin-top: 0.5rem;
                 margin-bottom: 0.5rem;
 
-
-
-
             }
-            #hike-image{
+            #trail-image{
                 width: 100%;
                 border-top-right-radius: 5px;
                 border-top-left-radius: 5px;
             }
             .description{
                 margin-bottom: 1rem;
+                margin-left: 0.2rem;
+                margin-right: 0.2rem;
             }
-            .add-to-fav-image{
+            .add-to-fav-icon{
                 width: 25px;
                 display: inline;
                 float: right;
@@ -111,13 +127,14 @@ class ChosenTrail extends HTMLElement {
             }
             .difficulty-level{
                 margin-top: -1rem;
+                margin-left: 0.2rem;
             }
         </style>
 
         <div class="trail">
-            <img id="hike-image" src=${this.data.hikeImageURL} alt="">
+            <img id="trail-image" src=${this.data.trailImageURL} alt="">
             <h2>${this.data.title}</h2>
-            <img class="add-to-fav-image" src="https://cdn-icons-png.flaticon.com/512/1517/1517846.png">
+            <img class="add-to-fav-icon" src="https://cdn-icons-png.flaticon.com/512/1517/1517846.png">
             <div class="difficulty-level">Difficulty: ${this.data.difficulty}/5</div>
             <p class="description">${this.data.description}</p>
             <div class="map-directions">Directions</div>
