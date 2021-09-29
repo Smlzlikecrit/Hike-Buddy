@@ -102,7 +102,7 @@ class FavouriteTrails extends HTMLElement {
     // ----------
     // displayFavourites(){
     
-    // result = selectedTrails.map((trail => (
+    // result = this.selectedTrails.map((trail => (
     //     `<div>
     //         <h2>${trail.title}</h2>
     //         <p>${trail.coordinates}</p>

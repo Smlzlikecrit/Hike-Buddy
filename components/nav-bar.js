@@ -40,12 +40,17 @@ class NavBar extends HTMLElement {
             justify-content: space-evenly;
             width: 95%;
         }
+        li{
+            width: ${100/3}%;
+        }
         a{
             text-decoration: none;
             display: block;
             padding-top: 1rem;
             padding-bottom: 1rem;
             color: #FFFFFF;
+            width: 100%;
+            text-align: center;
         }
         .separator {
             border-left: 0.5px solid #FFFFFF; 
